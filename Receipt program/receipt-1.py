@@ -1,3 +1,5 @@
+# Created by: Tomas Contreras, student from BYU Idaho
+
 import csv
 from datetime import datetime
 from datetime import date

@@ -1,3 +1,5 @@
+# Created by: Tomas Contreras, student from BYU Idaho
+
 import flet as ft
 import smtplib
 from email.mime.text import MIMEText
