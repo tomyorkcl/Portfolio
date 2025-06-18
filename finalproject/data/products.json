@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Element Section 8.0 Deck",
+    "brand": "Element",
+    "price": 79990,
+    "description": "Professional Canadian maple deck, medium concave, ideal for street and park.",
+    "image": "images/element.png"
+  },
+  {
+    "id": 2,
+    "name": "Independent Trucks 139 Stage 11",
+    "brand": "Independent",
+    "price": 45990,
+    "description": "Forged aluminum truck pair, stable and durable, 139 mm size.",
+    "image": "images/trucks-independent.png"
+  },
+  {
+    "id": 3,
+    "name": "Spitfire Formula Four 52mm Wheels",
+    "brand": "Spitfire",
+    "price": 32990,
+    "description": "Hard urethane wheels for high performance on any surface.",
+    "image": "images/spitfire.png"
+  },
+  {
+    "id": 4,
+    "name": "Polemic Skateboard 7.5",
+    "brand": "Polemic",
+    "price": 24990,
+    "description": "Durable and versatile deck, perfect for technical street tricks and park skating.",
+    "image": "images/polemic-fat.png"
+  },
+  {
+    "id": 5,
+    "name": "Polemic Skateboard 8.0",
+    "brand": "Polemic",
+    "price": 24990,
+    "description": "A high-quality deck with solid pop and a smooth ride for all levels of skaters.",
+    "image": "images/polemic-push.png"
+  },
+  {
+    "id": 6,
+    "name": "Polemic Skateboard 7.5",
+    "brand": "Polemic",
+    "price": 24990,
+    "description": "Great for street skating, offering a lightweight build with great stability.",
+    "image": "images/polemic-jason.png"
+  },
+  {
+    "id": 7,
+    "name": "T-Tool Skate Tool",
+    "brand": "SkateTools",
+    "price": 7990,
+    "description": "Multifunctional tool for skate assembly and adjustments, easy to use and compact.",
+    "image": "images/t-tool.png"
+  },
+  {
+    "id": 8,
+    "name": "Polemic Skateboard 7.5",
+    "brand": "Polemic",
+    "price": 24990,
+    "description": "Ideal for park riders who need a responsive deck with excellent control.",
+    "image": "images/polemic-robot.png"
+  },
+  {
+    "id": 9,
+    "name": "Polemic Skateboard 8.0",
+    "brand": "Polemic",
+    "price": 24990,
+    "description": "A solid all-rounder deck perfect for both street and park skating.",
+    "image": "images/polemic-freddy.png"
+  },
+  {
+    "id": 10,
+    "name": "Polemic Skateboard 8.2",
+    "brand": "Polemic",
+    "price": 24990,
+    "description": "A versatile deck with solid pop, suitable for all types of skating.",
+    "image": "images/polemic-dance.png"
+  },
+  {
+    "id": 11,
+    "name": "Polemic Skateboard 8.0",
+    "brand": "Polemic",
+    "price": 24990,
+    "description": "A durable deck for all-around skating, designed to withstand tough conditions.",
+    "image": "images/polemic-drak.png"
+  },
+  {
+    "id": 12,
+    "name": "Polemic Skateboard 7.5",
+    "brand": "Polemic",
+    "price": 24990,
+    "description": "Built to last with a classic shape that fits both street and park styles.",
+    "image": "images/polemic.png"
+  },
+  {
+    "id": 13,
+    "name": "Santa Cruz Skateboard 8.0",
+    "brand": "Santa Cruz",
+    "price": 24990,
+    "description": "High-quality skate deck from the USA, built to endure any challenge.",
+    "image": "images/santacruzboard.webp"
+  },
+  {
+    "id": 14,
+    "name": "Roy Skateboard 8.2",
+    "brand": "Roy",
+    "price": 24990,
+    "description": "Skateboard deck with great performance and quality, made in Chile.",
+    "image": "images/royboard.webp"
+  },
+  {
+    "id": 15,
+    "name": "Longboard",
+    "brand": "LongBeach",
+    "price": 24990,
+    "description": "A highly durable longboard, designed for smooth rides and long-distance cruising.",
+    "image": "images/longboard.webp"
+  }
+]

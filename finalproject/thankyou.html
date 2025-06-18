@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You | York Skateshop</title>
+  <meta name="description" content="Thank you for joining York Skateshop mailing list!" />
+  <meta name="author" content="Tomas Contreras" />
+  <link rel="stylesheet" href="styles/york.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <img src="images/logo.png" alt="York Skateshop Logo" class="logo" />
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      <nav id="nav">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalogue.html">Catalogue</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="thank-you-section">
+      <h1>Thank You for Joining!</h1>
+      <p>You've successfully joined our crew! Expect exclusive offers, discounts, and news in your inbox soon.</p>
+      <a href="index.html" class="back-home">Go Back to Home</a>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 York Skateshop. All Rights Reserved.</p>
+  </footer>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+/* Theme colors for easy customization */
+:root {
+  --bg: #f4f4f4; /* Background color */
+  --dark: #1a1a1a; /* Dark color for text and backgrounds */
+  --accent: #ff6f00; /* Accent color for buttons and highlights */
+  --text: #333; /* Default text color */
+  --white: #fff; /* White color */
+  --gray: #ddd; /* Gray color for borders */
+}
+
+/* Universal reset for all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General styles for body */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Header styles */
+header {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 3.5em 3em;
+}
+
+/* Header content layout */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Logo styling */
+.logo {
+  height: 60px;
+  width: auto;
+  margin-right: 1em;
+}
+
+/* Navigation menu */
+nav {
+  margin-left: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 3.5em;
+}
+
+.nav-links li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--accent);
+}
+
+/* Catalog with 3 products per row */
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  padding: 2em;
+  animation: fadeIn 0.8s ease-in;
+}
+
+/* Product item style */
+.product {
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.product:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.product h3 {
+  margin: 0.5em 0;
+  font-size: 1.1em;
+}
+
+.product button {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+  background-color: #e65c00;
+}
+
+/* Shopping Cart */
+.cart {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  padding: 1em;
+  border-radius: 8px;
+  width: 280px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in;
+}
+
+.cart h2 {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart button {
+  background-color: #d32f2f;
+  color: var(--white);
+  border: none;
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart button:hover {
+  background-color: #b71c1c;
+}
+
+#clear-cart {
+  margin-top: 1em;
+  width: 100%;
+  background-color: #555;
+}
+
+#clear-cart:hover {
+  background-color: #333;
+}
+
+/* Hamburger menu button (hidden by default) */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+}
+
+.close {
+  position: absolute;
+  top: 10px; right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Form section styles */
+.form-section {
+  max-width: 600px;
+  margin: 3em auto;
+  background-color: var(--white);
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Join form styles */
+.join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  margin-top: 1em;
+}
+
+.join-form input[type="text"],
+.join-form input[type="email"] {
+  padding: 0.75em;
+  font-size: 1em;
+  border: 1px solid var(--gray);
+  border-radius: 6px;
+}
+
+.checkbox-label {
+  font-size: 0.95em;
+  text-align: left;
+}
+
+.join-form button {
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 0.75em;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.join-form button:hover {
+  background-color: #e65c00;
+}
+
+/* Thank you section styles */
+.thank-you-section {
+  max-width: 600px;
+  margin: 3em auto;
+  background-color: var(--white);
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.thank-you-section h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.thank-you-section p {
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+}
+
+.thank-you-section .back-home {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 0.75em 2em;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.thank-you-section .back-home:hover {
+  background-color: #e65c00;
+}
+
+/* Featured products section */
+.featured-products {
+  text-align: center;
+  padding: 2em 0;
+}
+
+.featured-products .products-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  flex-wrap: wrap;
+  padding: 1em;
+}
+
+.featured-products .product {
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 250px; /* Set product size */
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.featured-products .product img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.featured-products .product h3 {
+  font-size: 1.1em;
+  margin-top: 0.5em;
+}
+
+.featured-products .product .price {
+  font-size: 1.1em;
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+
+.featured-products .product button {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1em;
+}
+
+.featured-products .product button:hover {
+  background-color: #e65c00;
+}
+
+/* Fade-in animation for entry */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Intro message section */
+.intro-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  background-color: var(--bg);
+  padding: 2em 0;
+}
+
+.intro-box {
+  background-color: var(--white);
+  padding: 2em;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 800px;
+}
+
+.intro-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1em;
+}
+
+.intro-box h1 {
+  font-size: 2.2em;
+  color: var(--dark);
+  margin-bottom: 1em;
+}
+
+.intro-box p {
+  font-size: 1.1em;
+  color: var(--text);
+  margin-bottom: 1.5em;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: auto; /* This pushes the footer to the bottom */
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 992px) {
+  .catalog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .catalog {
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
+
+  .cart {
+    position: static;
+    width: 100%;
+    margin-top: 2em;
+  }
+}

@@ -37,7 +37,6 @@ def main(page: ft.Page):
         )
     
 
-
     #Agregar label
     title = ft.Text("Changes Form", theme_style=ft.TextThemeStyle.TITLE_LARGE, font_family= "Bold", weight= ft.FontWeight.BOLD, color= "#03045e")
 
