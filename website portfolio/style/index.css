@@ -202,19 +202,6 @@ footer {
     margin-top: auto;
 }
 
-/* Responsive */
-@media (min-width: 768px) {
-    .hero-content {
-        flex-direction: row;
-        text-align: left;
-        gap: 40px;
-    }
-
-    .hero-img {
-        margin-bottom: 0;
-    }
-}
-
 /* ===== LIGHT MODE STYLES ===== */
 
 body.light-mode header {
@@ -307,6 +294,8 @@ body.light-mode .work-box:hover {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .work-box {
@@ -325,4 +314,17 @@ body.light-mode .work-box:hover {
 .work-box:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(31, 111, 235, 0.6);
+}
+
+/* Hamburguesa oculto por defecto en pantallas grandes */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #58a6ff;
+  cursor: pointer;
+  padding: 10px 20px;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  z-index: 1100;
 }
