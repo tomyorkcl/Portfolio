@@ -53,10 +53,8 @@ nav li {
 
 nav a {
     display: inline-block;
-    background-color: #161b22;
-    color: #58a6ff;
+    color: #ffffff;
     padding: 12px 20px;
-    border: 2px solid #1f6feb;
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
@@ -210,8 +208,8 @@ body.light-mode header {
 }
 
 body.light-mode nav a {
-  background-color: #ffffff;
-  color: #1f6feb;
+
+  color: #000000;
   border-color: #1f6feb;
 }
 
@@ -250,7 +248,7 @@ body.light-mode .skill-box:hover {
 
 body.light-mode footer {
   background-color: #e0e0e0;
-  color: #1f6feb;
+  color: #000000;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
