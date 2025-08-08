@@ -1,0 +1,22 @@
+{
+  "nav-home": "Inicio",
+  "nav-about": "Sobre mí",
+  "nav-portfolio": "Proyectos",
+  "nav-services": "Servicios",
+  "nav-contact": "Contacto",
+
+  "hero-title": "Hola, soy Tom",
+  "hero-subtitle": "Desarrollador Backend",
+
+  "skills-title": "Tecnologías // Habilidades",
+
+  "work-title": "Proyectos",
+  "work-box-1": "Modelo Básico de Recibos",
+  "work-box-2": "Comtec Global App - Aplicación de Escritorio",
+  "work-box-3": "Programas de BYU Idaho",
+
+  "footer-rights": "© 2025 Tomas Contreras. Todos los derechos reservados.",
+  "footer-github": "GitHub",
+  "footer-linkedin": "LinkedIn",
+  "footer-email": "Correo electrónico"
+}

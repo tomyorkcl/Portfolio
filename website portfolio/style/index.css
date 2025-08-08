@@ -6,26 +6,8 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-#theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px 15px;
-  border: none;
-  background-color: #444;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  z-index: 1000;
-}
-
 body.light-mode {
   background-color: white;
-  color: black;
-}
-
-body.light-mode #theme-toggle {
-  background-color: #ccc;
   color: black;
 }
 
@@ -33,10 +15,18 @@ header {
     background-color: #010409;
     padding: 20px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 1000;
     transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+nav {
+  flex-grow: 1;
 }
 
 nav ul {
@@ -45,6 +35,7 @@ nav ul {
     justify-content: center;
     margin: 0;
     padding: 0;
+    gap: 20px;
 }
 
 nav li {
@@ -153,6 +144,45 @@ h1, h2 {
     box-shadow: 0 0 15px rgba(31, 111, 235, 0.6);
 }
 
+.work {
+    padding: 60px 90px;
+    color: #ffffff;
+    text-align: center;
+    box-sizing: border-box;
+    max-width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 50px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-box {
+    width: 100%;
+    background-color: #0d1117;
+    border: 2px solid #1f6feb;
+    border-radius: 10px;
+    padding: 20px;
+    font-weight: bold;
+    color: #c9d1d9;
+    box-shadow: 0 0 10px rgba(31, 111, 235, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+.work-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(31, 111, 235, 0.6);
+}
+
 footer {
     background-color: #010409;
     padding: 30px 20px;
@@ -208,7 +238,6 @@ body.light-mode header {
 }
 
 body.light-mode nav a {
-
   color: #000000;
   border-color: #1f6feb;
 }
@@ -223,11 +252,11 @@ body.light-mode .hero {
   background-color: #ffffff;
 }
 
-body.light-mode .hero-text h1 {
+body.light-mode .hero-text h1{
   color: #1f6feb;
 }
 
-body.light-mode .hero-text p {
+body.light-mode .hero-text p{
   color: #333;
 }
 
@@ -275,45 +304,6 @@ body.light-mode .work-box:hover {
   box-shadow: 0 0 15px rgba(31, 111, 235, 0.6);
 }
 
-.work {
-    padding: 60px 90px;
-    color: #ffffff;
-    text-align: center;
-    box-sizing: border-box;
-    max-width: 100%;
-    transition: background-color 0.3s ease;
-}
-
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 50px;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-    justify-content: center;
-    align-items: center;
-}
-
-.work-box {
-    width: 100%;
-    background-color: #0d1117;
-    border: 2px solid #1f6feb;
-    border-radius: 10px;
-    padding: 20px;
-    font-weight: bold;
-    color: #c9d1d9;
-    box-shadow: 0 0 10px rgba(31, 111, 235, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
-    text-align: center;
-}
-
-.work-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(31, 111, 235, 0.6);
-}
-
 /* Hamburguesa oculto por defecto en pantallas grandes */
 .menu-toggle {
   display: none;
@@ -325,4 +315,45 @@ body.light-mode .work-box:hover {
   left: 20px;
   top: 15px;
   z-index: 1100;
+}
+
+/* ==== TOGGLE SWITCH ==== */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 25px;
+  background-color: #444;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+#theme-toggle::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #1f6feb, #58a6ff);
+  border-radius: 50%;
+  position: relative;
+  left: 3px;
+  transition: left 0.3s ease, background 0.3s ease;
+  box-shadow: 0 0 5px rgba(31, 111, 235, 0.6);
+}
+
+body.light-mode #theme-toggle {
+  background-color: #ccc;
+}
+
+body.light-mode #theme-toggle::before {
+  left: 27px;
+  background: linear-gradient(45deg, #0a58ca, #1f6feb);
+  box-shadow: 0 0 5px rgba(10, 88, 202, 0.6);
 }
