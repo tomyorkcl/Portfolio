@@ -54,9 +54,9 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #1f6feb;
+    background-color: #3b82f6;
     color: #ffffff;
-    box-shadow: 0 0 10px #1f6feb;
+    box-shadow: 0 0 10px #3b82f6;
 }
 
 section {
@@ -66,7 +66,7 @@ section {
 }
 
 h1, h2 {
-    color: #58a6ff;
+    color: #3b82f6;
 }
 
 .hero {
@@ -91,14 +91,14 @@ h1, h2 {
     height: 280px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid #1f6feb;
+    border: 3px solid #3b82f6;
     box-shadow: 0 0 20px rgba(31, 111, 235, 0.4);
     margin-bottom: 20px;
 }
 
 .hero-text h1 {
     font-size: 2.2rem;
-    color: #58a6ff;
+    color: #3b82f6;
     margin-bottom: 10px;
 }
 
@@ -118,18 +118,18 @@ h1, h2 {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 50px;
-    width: 100%;
     max-width: 800px;
+    padding: 50px 20px;
     margin: 0 auto;
-    padding: 0 20px;
+    justify-items: center;
 }
 
 .skill-box {
     width: 100%;
-    background-color: #0d1117;
-    border: 2px solid #1f6feb;
+    background-color: #1a1a1a;
+    border: 2px solid #3b82f6;
     border-radius: 10px;
     padding: 20px;
     font-weight: bold;
@@ -155,20 +155,18 @@ h1, h2 {
 
 .work-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 50px;
-    width: 100%;
     max-width: 800px;
+    padding: 50px 20px;
     margin: 0 auto;
-    padding: 0 20px;
-    justify-content: center;
-    align-items: center;
+    justify-items: center;
 }
 
 .work-box {
     width: 100%;
-    background-color: #0d1117;
-    border: 2px solid #1f6feb;
+    background-color: #1a1a1a;
+    border: 2px solid #3b82f6;
     border-radius: 10px;
     padding: 20px;
     font-weight: bold;
@@ -212,7 +210,7 @@ footer {
 }
 
 .social-links a:hover {
-    color: #1f6feb;
+    color: #3b82f6;
 }
 
 /* Footer sticky */
@@ -239,13 +237,13 @@ body.light-mode header {
 
 body.light-mode nav a {
   color: #000000;
-  border-color: #1f6feb;
+  border-color: #3b82f6;
 }
 
 body.light-mode nav a:hover {
-  background-color: #1f6feb;
+  background-color: #3b82f6;
   color: white;
-  box-shadow: 0 0 10px #1f6feb;
+  box-shadow: 0 0 10px #3b82f6;
 }
 
 body.light-mode .hero {
@@ -267,7 +265,7 @@ body.light-mode .skills {
 body.light-mode .skill-box {
   background-color: white;
   color: #000;
-  border: 2px solid #1f6feb;
+  border: 2px solid #3b82f6;
   box-shadow: 0 0 10px rgba(31, 111, 235, 0.2);
 }
 
@@ -276,17 +274,17 @@ body.light-mode .skill-box:hover {
 }
 
 body.light-mode footer {
-  background-color: #e0e0e0;
+  background-color: #f5f5f5;
   color: #000000;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode .social-links a {
-  color: #1f6feb;
+  color: #3b82f6;
 }
 
 body.light-mode .social-links a:hover {
-  color: #0a58ca;
+  color: #3b82f6;
 }
 
 body.light-mode .work {
@@ -296,7 +294,7 @@ body.light-mode .work {
 body.light-mode .work-box {
   background-color: white;
   color: #000;
-  border: 2px solid #1f6feb;
+  border: 2px solid #3b82f6;
   box-shadow: 0 0 10px rgba(31, 111, 235, 0.2);
 }
 
@@ -308,7 +306,7 @@ body.light-mode .work-box:hover {
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
-  color: #58a6ff;
+  color: #3b82f6;
   cursor: pointer;
   padding: 10px 20px;
   position: absolute;
@@ -340,7 +338,7 @@ body.light-mode .work-box:hover {
   content: "";
   width: 20px;
   height: 20px;
-  background: linear-gradient(45deg, #1f6feb, #58a6ff);
+  background: linear-gradient(45deg, #3b82f6, #58a6ff);
   border-radius: 50%;
   position: relative;
   left: 3px;
@@ -356,4 +354,13 @@ body.light-mode #theme-toggle::before {
   left: 27px;
   background: linear-gradient(45deg, #0a58ca, #1f6feb);
   box-shadow: 0 0 5px rgba(10, 88, 202, 0.6);
+}
+
+
+
+.skill-icon {
+    width: 50px;      /* tamaño del ícono */
+    height: 50px;
+    object-fit: contain; /* mantiene proporción */
+    margin-bottom: 10px; /* espacio con el texto */
 }
