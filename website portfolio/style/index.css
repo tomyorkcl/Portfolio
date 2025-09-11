@@ -172,7 +172,7 @@ body.light-mode .hero-text p {
 }
 
 .skills-grid { grid-template-columns: repeat(4, 1fr); }
-.work-grid { grid-template-columns: repeat(3, 1fr); }
+.work-grid { grid-template-columns: repeat(2, 1fr); }
 
 .skill-box, .work-box {
     width: 100%;
