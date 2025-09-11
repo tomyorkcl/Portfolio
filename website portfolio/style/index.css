@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Neopixel';
+  src: url('../fonts/NEOPIXEL-Regular.woff2') format('woff2'),
+       url('../fonts/NEOPIXEL-Regular.woff') format('woff');
+  font-weight: 700; /* bold */
+  font-style: normal;
+}
+
 /* ===== GLOBAL ===== */
 body {
     margin: 0;
@@ -23,7 +31,11 @@ section {
 
 h1, h2 {
     color: #3b82f6;
+    font-family: 'Neopixel', sans-serif;
+    font-weight: bold;
+    font-size: 45px;
 }
+
 
 /* ===== HEADER ===== */
 header {
@@ -118,7 +130,7 @@ body.light-mode nav a:hover {
 }
 
 .hero-text h1 {
-    font-size: 2.2rem;
+    font-size: 70px;
     color: #3b82f6;
     margin-bottom: 10px;
 }
