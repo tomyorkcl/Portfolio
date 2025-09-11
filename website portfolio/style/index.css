@@ -7,8 +7,8 @@ body {
 }
 
 body.light-mode {
-  background-color: white;
-  color: black;
+  background-color: #f4f4f4; /* gris muy claro en vez de blanco puro */
+  color: #111;
 }
 
 header {
@@ -231,8 +231,8 @@ footer {
 /* ===== LIGHT MODE STYLES ===== */
 
 body.light-mode header {
-  background-color: #f5f5f5;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #eaeaea;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 body.light-mode nav a {
@@ -247,7 +247,7 @@ body.light-mode nav a:hover {
 }
 
 body.light-mode .hero {
-  background-color: #ffffff;
+  background-color: #f4f4f4;
 }
 
 body.light-mode .hero-text h1{
@@ -263,10 +263,10 @@ body.light-mode .skills {
 }
 
 body.light-mode .skill-box {
-  background-color: white;
+  background-color: #ffffff;
   color: #000;
   border: 2px solid #3b82f6;
-  box-shadow: 0 0 10px rgba(31, 111, 235, 0.2);
+  box-shadow: 0 0 10px rgba(31, 111, 235, 0.15);
 }
 
 body.light-mode .skill-box:hover {
@@ -274,9 +274,9 @@ body.light-mode .skill-box:hover {
 }
 
 body.light-mode footer {
-  background-color: #f5f5f5;
+  background-color: #eaeaea;
   color: #000000;
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.08);
 }
 
 body.light-mode .social-links a {
@@ -292,10 +292,10 @@ body.light-mode .work {
 }
 
 body.light-mode .work-box {
-  background-color: white;
+  background-color: #ffffff;
   color: #000;
   border: 2px solid #3b82f6;
-  box-shadow: 0 0 10px rgba(31, 111, 235, 0.2);
+  box-shadow: 0 0 10px rgba(31, 111, 235, 0.15);
 }
 
 body.light-mode .work-box:hover {
@@ -356,11 +356,9 @@ body.light-mode #theme-toggle::before {
   box-shadow: 0 0 5px rgba(10, 88, 202, 0.6);
 }
 
-
-
 .skill-icon {
-    width: 50px;      /* tamaño del ícono */
+    width: 50px;
     height: 50px;
-    object-fit: contain; /* mantiene proporción */
-    margin-bottom: 10px; /* espacio con el texto */
+    object-fit: contain;
+    margin-bottom: 10px;
 }
