@@ -70,19 +70,31 @@
     padding: 30px 5px;
   }
 
-.skills-grid,
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   max-width: 900px; /* ancho fijo para centrar */
   margin: 0 auto;   /* centra el grid */
-  padding: 20px;
+  padding: 10px;
 }
 
-  .skill-box,
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  max-width: 900px; /* ancho fijo para centrar */
+  margin: 0 auto;   /* centra el grid */
+  padding: 10px;
+}
+
   .work-box {
     padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .skill-box {
+    padding: 20px;
     font-size: 0.95rem;
   }
 
@@ -100,5 +112,176 @@
     right: 10px;
     padding: 8px 12px;
     font-size: 0.9rem;
+  }
+}
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 25px;
+  background-color: #444;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+/* círculo interior */
+#theme-toggle::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #3b82f6, #58a6ff);
+  border-radius: 50%;
+  position: relative;
+  left: 3px;
+  transition: left 0.3s ease, background 0.3s ease;
+  box-shadow: 0 0 5px rgba(31, 111, 235, 0.6);
+}
+
+/* Light mode */
+body.light-mode #theme-toggle {
+  background-color: #ccc;
+}
+
+body.light-mode #theme-toggle::before {
+  left: 27px;
+  background: linear-gradient(45deg, #0a58ca, #1f6feb);
+  box-shadow: 0 0 5px rgba(10, 88, 202, 0.6);
+}
+
+/* ====== RESPONSIVE ====== */
+
+/* Tablets */
+@media (max-width: 768px) {
+
+  #theme-toggle {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 20px;
+  }
+
+  #theme-toggle::before {
+    width: 16px;
+    height: 16px;
+  }
+
+  body.light-mode #theme-toggle::before {
+    left: 21px;
+  }
+}
+
+/* ==== RESPONSIVE PARA CELULAR ==== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* se muestra solo en móvil */
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    text-align: center;
+  }
+}
+
+/* ==== MENÚ MÓVIL ==== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* botón visible solo en móvil */
+  }
+
+  nav ul {
+    display: none; /* oculto por defecto */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0d1117; /* fondo negro en dark mode */
+    border-top: 2px solid #3b82f6; /* línea azul solo en móvil */
+    text-align: center;
+    animation: fadeIn 0.4s ease forwards;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #3b82f6; /* azul neón solo en móvil */
+    text-shadow: 0 0 6px rgba(59, 130, 246, 0.8);
+    transition: all 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    background: rgba(59, 130, 246, 0.15);
+    color: #ffffff;
+    box-shadow: inset 0 0 10px #3b82f6;
+  }
+
+  /* Light mode solo móvil */
+  body.light-mode nav ul {
+    background: #f4f4f4;
+    border-top: 2px solid #1f6feb;
+  }
+
+  body.light-mode nav ul li a {
+    color: #111;
+    text-shadow: none;
+  }
+
+  body.light-mode nav ul li a:hover {
+    background: rgba(31, 111, 235, 0.2);
+    color: #1f6feb;
+    box-shadow: inset 0 0 10px rgba(31, 111, 235, 0.4);
+  }
+}
+
+/* ==== DESKTOP ==== */
+@media (min-width: 769px) {
+  nav ul {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: none; /* quitar fondo del menú móvil */
+    border: none;     /* quitar línea azul */
+    text-align: center;
+  }
+
+  nav ul li a {
+    color: #ffffff; /* mismo color de links desktop */
+    text-shadow: none;
+    background: none;
+    box-shadow: none;
+  }
+
+  nav ul li a:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
+    box-shadow: 0 0 10px #3b82f6;
+  }
+
+  .menu-toggle {
+    display: none !important; /* ocultar botón en desktop */
   }
 }

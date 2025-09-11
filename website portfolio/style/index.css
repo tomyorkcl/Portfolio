@@ -1,32 +1,52 @@
+/* ===== GLOBAL ===== */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #0d1117;
     color: #ffffff;
     transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 body.light-mode {
-  background-color: #f4f4f4; /* gris muy claro en vez de blanco puro */
-  color: #111;
+    background-color: #f4f4f4;
+    color: #111;
 }
 
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h1, h2 {
+    color: #3b82f6;
+}
+
+/* ===== HEADER ===== */
 header {
     background-color: #010409;
     padding: 20px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     position: relative;
-    top: 0;
     z-index: 1000;
-    transition: background-color 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    transition: background-color 0.3s ease;
 }
 
+body.light-mode header {
+    background-color: #eaeaea;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== NAV ===== */
 nav {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 nav ul {
@@ -59,16 +79,17 @@ nav a:hover {
     box-shadow: 0 0 10px #3b82f6;
 }
 
-section {
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: auto;
+body.light-mode nav a {
+    color: #000;
 }
 
-h1, h2 {
-    color: #3b82f6;
+body.light-mode nav a:hover {
+    background-color: #3b82f6;
+    color: #fff;
+    box-shadow: 0 0 10px #3b82f6;
 }
 
+/* ===== HERO ===== */
 .hero {
     padding: 60px 20px;
     background-color: #0d1117;
@@ -107,7 +128,20 @@ h1, h2 {
     color: #c9d1d9;
 }
 
-.skills {
+body.light-mode .hero {
+    background-color: #f4f4f4;
+}
+
+body.light-mode .hero-text h1 {
+    color: #1f6feb;
+}
+
+body.light-mode .hero-text p {
+    color: #333;
+}
+
+/* ===== SKILLS & WORK ===== */
+.skills, .work {
     padding: 60px 90px;
     color: #ffffff;
     text-align: center;
@@ -116,9 +150,8 @@ h1, h2 {
     transition: background-color 0.3s ease;
 }
 
-.skills-grid {
+.skills-grid, .work-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 50px;
     max-width: 800px;
     padding: 50px 20px;
@@ -126,7 +159,10 @@ h1, h2 {
     justify-items: center;
 }
 
-.skill-box {
+.skills-grid { grid-template-columns: repeat(4, 1fr); }
+.work-grid { grid-template-columns: repeat(3, 1fr); }
+
+.skill-box, .work-box {
     width: 100%;
     background-color: #1a1a1a;
     border: 2px solid #3b82f6;
@@ -139,48 +175,21 @@ h1, h2 {
     text-align: center;
 }
 
-.skill-box:hover {
+.skill-box:hover, .work-box:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(31, 111, 235, 0.6);
 }
 
-.work {
-    padding: 60px 90px;
-    color: #ffffff;
-    text-align: center;
-    box-sizing: border-box;
-    max-width: 100%;
-    transition: background-color 0.3s ease;
-}
+body.light-mode .skills, body.light-mode .work { color: #000; }
 
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-    max-width: 800px;
-    padding: 50px 20px;
-    margin: 0 auto;
-    justify-items: center;
-}
-
-.work-box {
-    width: 100%;
-    background-color: #1a1a1a;
+body.light-mode .skill-box, body.light-mode .work-box {
+    background-color: #ffffff;
+    color: #000;
     border: 2px solid #3b82f6;
-    border-radius: 10px;
-    padding: 20px;
-    font-weight: bold;
-    color: #c9d1d9;
-    box-shadow: 0 0 10px rgba(31, 111, 235, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
-    text-align: center;
+    box-shadow: 0 0 10px rgba(31, 111, 235, 0.15);
 }
 
-.work-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(31, 111, 235, 0.6);
-}
-
+/* ===== FOOTER ===== */
 footer {
     background-color: #010409;
     padding: 30px 20px;
@@ -189,173 +198,156 @@ footer {
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.6);
     font-weight: bold;
     font-size: 1rem;
+    margin-top: auto;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.footer-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.social-links {
-    margin-top: 15px;
-}
-
-.social-links a {
-    color: #ffffff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #3b82f6;
-}
-
-/* Footer sticky */
-html, body {
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-footer {
-    margin-top: auto;
-}
-
-/* ===== LIGHT MODE STYLES ===== */
-
-body.light-mode header {
-  background-color: #eaeaea;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-body.light-mode nav a {
-  color: #000000;
-  border-color: #3b82f6;
-}
-
-body.light-mode nav a:hover {
-  background-color: #3b82f6;
-  color: white;
-  box-shadow: 0 0 10px #3b82f6;
-}
-
-body.light-mode .hero {
-  background-color: #f4f4f4;
-}
-
-body.light-mode .hero-text h1{
-  color: #1f6feb;
-}
-
-body.light-mode .hero-text p{
-  color: #333;
-}
-
-body.light-mode .skills {
-  color: #000;
-}
-
-body.light-mode .skill-box {
-  background-color: #ffffff;
-  color: #000;
-  border: 2px solid #3b82f6;
-  box-shadow: 0 0 10px rgba(31, 111, 235, 0.15);
-}
-
-body.light-mode .skill-box:hover {
-  box-shadow: 0 0 15px rgba(31, 111, 235, 0.6);
-}
-
 body.light-mode footer {
-  background-color: #eaeaea;
-  color: #000000;
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.08);
+    background-color: #eaeaea;
+    color: #000;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.08);
 }
 
-body.light-mode .social-links a {
-  color: #3b82f6;
-}
+.social-links a { transition: color 0.3s ease; }
+.social-links a:hover { color: #3b82f6; }
 
-body.light-mode .social-links a:hover {
-  color: #3b82f6;
-}
-
-body.light-mode .work {
-  color: #000;
-}
-
-body.light-mode .work-box {
-  background-color: #ffffff;
-  color: #000;
-  border: 2px solid #3b82f6;
-  box-shadow: 0 0 10px rgba(31, 111, 235, 0.15);
-}
-
-body.light-mode .work-box:hover {
-  box-shadow: 0 0 15px rgba(31, 111, 235, 0.6);
-}
-
-/* Hamburguesa oculto por defecto en pantallas grandes */
+/* ===== MENU HAMBURGUESA (MÓVIL) ===== */
 .menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  color: #3b82f6;
-  cursor: pointer;
-  padding: 10px 20px;
-  position: absolute;
-  left: 20px;
-  top: 15px;
-  z-index: 1100;
+    display: none; /* desktop hide */
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 1200;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
 }
 
-/* ==== TOGGLE SWITCH ==== */
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    border-radius: 2px;
+    background: #3b82f6;
+    box-shadow: 0 0 8px #3b82f6;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ==== MENÚ MÓVIL ==== */
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #0d1117;
+        border-top: 2px solid #3b82f6;
+        text-align: center;
+        animation: fadeIn 0.4s ease forwards;
+    }
+
+    nav ul.show { display: flex; }
+
+    nav ul li { width: 100%; }
+
+    nav ul li a {
+        display: block;
+        padding: 15px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: #3b82f6;
+        text-shadow: 0 0 6px rgba(59, 130, 246, 0.8);
+        transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background: rgba(59, 130, 246, 0.15);
+        color: #fff;
+        box-shadow: inset 0 0 10px #3b82f6;
+    }
+
+    body.light-mode nav ul {
+        background: #f4f4f4;
+        border-top: 2px solid #1f6feb;
+    }
+
+    body.light-mode nav ul li a {
+        color: #111;
+        text-shadow: none;
+    }
+
+    body.light-mode nav ul li a:hover {
+        background: rgba(31, 111, 235, 0.2);
+        color: #1f6feb;
+        box-shadow: inset 0 0 10px rgba(31, 111, 235, 0.4);
+    }
+}
+
+/* ==== ANIMACIÓN FADE-IN ==== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== TOGGLE SWITCH ===== */
 #theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 50px;
-  height: 25px;
-  background-color: #444;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  display: flex !important;
-  align-items: center;
-  justify-content: flex-start;
-  transition: background-color 0.3s ease;
-  z-index: 1000;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 25px;
+    background-color: #444;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
 }
 
 #theme-toggle::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(45deg, #3b82f6, #58a6ff);
-  border-radius: 50%;
-  position: relative;
-  left: 3px;
-  transition: left 0.3s ease, background 0.3s ease;
-  box-shadow: 0 0 5px rgba(31, 111, 235, 0.6);
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #3b82f6, #58a6ff);
+    border-radius: 50%;
+    position: relative;
+    left: 3px;
+    transition: left 0.3s ease, background 0.3s ease;
+    box-shadow: 0 0 5px rgba(31, 111, 235, 0.6);
 }
 
 body.light-mode #theme-toggle {
-  background-color: #ccc;
+    background-color: #ccc;
 }
 
 body.light-mode #theme-toggle::before {
-  left: 27px;
-  background: linear-gradient(45deg, #0a58ca, #1f6feb);
-  box-shadow: 0 0 5px rgba(10, 88, 202, 0.6);
+    left: 27px;
+    background: linear-gradient(45deg, #0a58ca, #1f6feb);
+    box-shadow: 0 0 5px rgba(10, 88, 202, 0.6);
 }
 
+/* ===== ICONOS SKILL ===== */
 .skill-icon {
     width: 50px;
     height: 50px;
