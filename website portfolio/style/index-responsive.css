@@ -2,6 +2,9 @@
   header {
     padding: 15px 10px;
     text-align: center;
+    background: inherit;  /* hereda el color del body */
+    border: none;         /* quita la línea si no quieres separación */
+    box-shadow: none;
   }
 
 /* Responsive nav */
@@ -160,6 +163,14 @@ body.light-mode #theme-toggle::before {
   box-shadow: 0 0 5px rgba(10, 88, 202, 0.6);
 }
 
+header.light-mode {
+  background: inherit;  /* hereda el color del body */
+  border: none;         /* quita la línea si no quieres separación */
+  box-shadow: none;
+  padding: 15px 10px;
+  text-align: center;
+}
+
 /* ====== RESPONSIVE ====== */
 
 /* Tablets */
@@ -287,5 +298,18 @@ body.light-mode #theme-toggle::before {
 
   .menu-toggle {
     display: none !important; /* ocultar botón en desktop */
+  }
+}
+
+/* Adaptación responsive */
+@media (max-width: 768px) {
+  .lang-menu {
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+  }
+  .lang-dropdown {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

@@ -311,3 +311,64 @@ body.light-mode #theme-toggle::before {
     margin-bottom: 10px;
 }
 
+/* ===== SELECTOR DE IDIOMA ===== */
+.lang-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.lang-btn img {
+  width: 28px;
+  height: 20px;
+  border-radius: 3px;
+  box-shadow: 0 0 6px #3b82f6;
+  transition: transform 0.2s ease;
+}
+
+.lang-btn img:hover {
+  transform: scale(1.1);
+}
+
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: #0d1117;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(31, 111, 235, 0.4);
+  z-index: 2000;
+}
+
+.lang-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.lang-dropdown a img {
+  width: 22px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+.lang-dropdown a:hover {
+  background: #3b82f6;
+}
+
+.lang-menu.active .lang-dropdown {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
