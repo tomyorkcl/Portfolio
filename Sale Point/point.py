@@ -7,10 +7,12 @@ IVA = 0.19
 # Base de productos (puede crecer dinámicamente)
 productos = {}
 
+
 def main(page: ft.Page):
-    page.title = "💻 Punto de Venta"
-    page.theme_mode = "light"
+    page.title = "💻 Punto de Venta" #Nombre de tienda/negocio
+    page.theme_mode = "dark" 
     page.scroll = "auto"
+
 
     # Elementos de UI
     codigo_input = ft.TextField(label="Código del producto", width=200)
@@ -45,10 +47,10 @@ def main(page: ft.Page):
 
     # Mostrar productos
     def mostrar_productos():
-        lista = "📦 Productos registrados:\n"
+        lista = "Productos registrados:\n"
         for codigo, datos in productos.items():
             lista += f"{codigo} - {datos['nombre']} - ${datos['precio']:.0f}\n"
-        return lista if productos else "⚠ No hay productos registrados"
+        return lista if productos else "⚠ No hay productos registrados ⚠"
 
     # Nueva venta: agregar producto al carrito
     def agregar_al_carrito(codigo):
@@ -112,21 +114,27 @@ def main(page: ft.Page):
 
     # UI principal
     page.add(
+        ft.Column(
+        [
         ft.Text("=== 🛍️ Sistema de Punto de Venta ===", size=20, weight="bold"),
-        ft.Row([codigo_input, nombre_input, precio_input]),
+        ft.Row([codigo_input, nombre_input, precio_input], alignment=ft.MainAxisAlignment.CENTER),
         ft.ElevatedButton("Registrar producto", on_click=registrar_producto),
         salida,
         ft.Divider(),
-        ft.Text("🛒 Carrito de compras:", size=18, weight="bold"),
-        carrito_view,
+        ft.Text("🛒 Carrito de compras:", size=20, weight="bold"),
+            carrito_view,
         ft.Row([
             ft.TextField(
                 label="Código para agregar al carrito",
-                width=200,
+                width=280,
                 on_submit=lambda e: agregar_al_carrito(e.control.value)
             ),
-        ]),
+        ], alignment=ft.MainAxisAlignment.CENTER),
         ft.ElevatedButton("Generar Boleta", on_click=generar_boleta),
+        ],
+        alignment=ft.MainAxisAlignment.CENTER,
+        horizontal_alignment=ft.CrossAxisAlignment.CENTER
+        )
     )
 
 ft.app(target=main)
